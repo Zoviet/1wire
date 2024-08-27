@@ -9,9 +9,9 @@ ow.setup(pin)
 function search()
 	local flag = false
 	searchtimer:interval(500)
-    ow.reset_search(pin)
-    count = 1
-    repeat  
+	ow.reset_search(pin)
+	count = 1
+	repeat  
 		addr = ow.search(pin)
 		count = count + 1 
 		if(addr ~= nil) then     
@@ -38,9 +38,9 @@ function search()
 			-- Do something 
 		end
 		tmr.wdclr()  
-    until(count > attempts or flag)
-    print(code)
-    return code
+	until(count > attempts or flag)
+	print(code)
+	return code
 end
 
 searchtimer = tmr.create()
